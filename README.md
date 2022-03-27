@@ -1,1 +1,1 @@
-# udacity-projects-intro-to-programming
+# Udacity Intro to Programming Projects
