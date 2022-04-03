@@ -55,25 +55,14 @@ class RandomMovesComputer(Player):
 class LoopMovesComputer(Player):
     def __init__(self):
         super().__init__()
-        self.choice = 4
+        self.next_move = 0
 
     def move(self):
-        options = moves
-        if self.choice == 4:
-            self.choice = 0
-            return options[self.choice]
-        elif self.choice == 0:
-            self.choice = 1
-            return options[self.choice]
-        elif self.choice == 1:
-            self.choice = 2
-            return options[self.choice]
-        elif self.choice == 2:
-            self.choice = 3
-            return options[self.choice]
-        elif self.choice == 3:
-            self.choice = 4
-            return options[self.choice]
+        play_move = self.next_move
+        self.next_move += 1
+        if self.next_move == len(moves):
+            self.next_move = 0
+        return moves[play_move]
 
 
 # computer copies player's previous round move
